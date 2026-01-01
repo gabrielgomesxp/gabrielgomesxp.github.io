@@ -1,8 +1,15 @@
 title: Gabriel Gomes XP
+description: >-
+  Documentando minha jornada de aprendizado em tecnologia e programação.
 theme: minima
-permalink: /:title/ # Isso remove a data do link final do site!
+permalink: /:title/
 
-# Configurações opcionais do Minima
+# Configuração do Menu Superior
+header_pages:
+  - index.md
+  - blog.md
+
+# Configurações de Redes Sociais (Opcional)
 minima:
   social_links:
     - { platform: github, user_name: gabrielgomesxp }
