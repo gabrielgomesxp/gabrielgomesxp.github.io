@@ -1,2 +1,8 @@
-title: Meu Site Pessoal
+title: Gabriel Gomes XP
 theme: minima
+permalink: /:title/ # Isso remove a data do link final do site!
+
+# Configurações opcionais do Minima
+minima:
+  social_links:
+    - { platform: github, user_name: gabrielgomesxp }
