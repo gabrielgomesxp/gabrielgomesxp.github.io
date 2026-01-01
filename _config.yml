@@ -1,3 +1,4 @@
+# Informações Básicas
 title: Gabriel Gomes XP
 description: >-
   Documentando minha jornada de aprendizado em tecnologia e programação.
@@ -9,7 +10,12 @@ header_pages:
   - index.md
   - blog.md
 
-# Configurações de Redes Sociais (Opcional)
+# Configuração das Redes Sociais no Rodapé
 minima:
   social_links:
+    - { platform: youtube, user_name: gabrielgomesxp }
+    - { platform: twitter, user_name: gabrielgomesxp }
+    - { platform: instagram, user_name: gabrielgomesxp }
+    - { platform: linkedin, user_name: gabrielgomesxp }
+    - { platform: facebook, user_name: gabrielgomesxp }
     - { platform: github, user_name: gabrielgomesxp }
