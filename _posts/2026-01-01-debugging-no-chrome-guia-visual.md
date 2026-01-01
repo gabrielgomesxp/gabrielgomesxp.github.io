@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Debugging no Chrome: Guia Visual para Iniciantes (2026)"
+author: Gabriel Gomes
 description: "Aprenda como debugar código JavaScript no Google Chrome. Domine o Console e a aba Sources com este guia visual completo para encontrar erros rapidamente."
 permalink: /debugging-no-chrome-guia-visual/
 ---
