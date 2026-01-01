@@ -5,11 +5,8 @@ description: "Aprenda como debugar código JavaScript no Google Chrome. Domine o
 permalink: /debugging-no-chrome-guia-visual/
 ---
 
-# Debugging no Chrome: Uma Investigação Visual do Código
-
 ![Infográfico sobre Debugging no Chrome: Uma Investigação Visual do Código](/assets/img/debugging-no-chrome-guia-visual/1.webp)
 
-## Introdução
 
 Encontrar erros no código pode ser frustrante para quem está começando, mas dominar as ferramentas certas transforma essa tarefa em uma investigação lógica e visual. Depurar (ou debugar) é, acima de tudo, entender como seu código pensa e se comporta em tempo real. Neste guia, vamos explorar as ferramentas do Google Chrome para monitorar dados e pausar a execução do seu script exatamente onde o erro ocorre.
 
