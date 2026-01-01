@@ -7,7 +7,7 @@ permalink: /debugging-no-chrome-guia-visual/
 
 # Debugging no Chrome: Uma Investigação Visual do Código
 
-![Infográfico sobre Debugging no Chrome: Uma Investigação Visual do Código](/assets/img/1.webp)
+![Infográfico sobre Debugging no Chrome: Uma Investigação Visual do Código](/assets/img/debugging-no-chrome-guia-visual/1.webp)
 
 ## Introdução
 
@@ -19,15 +19,15 @@ Encontrar erros no código pode ser frustrante para quem está começando, mas d
 
 O console funciona como o seu canal de comunicação primário e direto com o código enquanto ele é executado pelo navegador.
 
-![Interface do Console do Google Chrome DevTools](/assets/img/2.webp)
+![Interface do Console do Google Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/2.webp)
 
 ### Como usar o `console.log()` de forma inteligente
 
 * **Use Etiquetas:** Evite logs genéricos; sempre utilize etiquetas para identificar a variável e não se perder em valores sem contexto.
 * **Visualização de Dados:** Para listas e objetos complexos, o comando `console.table()` organiza as informações em uma grade legível, sendo muito mais eficaz que o log comum.
 
-![Comparação entre console.log ineficaz e eficaz](/assets/img/3.webp)
-![Exemplo de visualização com console.table](/assets/img/4.webp)
+![Comparação entre console.log ineficaz e eficaz](/assets/img/debugging-no-chrome-guia-visual/3.webp)
+![Exemplo de visualização com console.table](/assets/img/debugging-no-chrome-guia-visual/4.webp)
 
 ---
 
@@ -35,15 +35,15 @@ O console funciona como o seu canal de comunicação primário e direto com o c�
 
 Quando apenas imprimir mensagens não resolve o problema, você deve utilizar a aba **Sources** para ver o erro enquanto ele acontece, em vez de apenas observar o resultado final.
 
-![Localização da aba Sources no Chrome DevTools](/assets/img/5.webp)
+![Localização da aba Sources no Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/5.webp)
 
 ### Pausando o tempo com Breakpoints
 
 * **Inserindo um Breakpoint:** Você pode interromper a execução do código clicando diretamente no número da linha, criando um ponto de parada.
 * **Execução Pausada:** Quando o navegador atinge essa linha, o código "congela", permitindo analisar o cenário exato da aplicação.
 
-![Como inserir um breakpoint](/assets/img/6.webp)
-![Visualização de execução pausada no Chrome](/assets/img/7.webp)
+![Como inserir um breakpoint](/assets/img/debugging-no-chrome-guia-visual/6.webp)
+![Visualização de execução pausada no Chrome](/assets/img/debugging-no-chrome-guia-visual/7.webp)
 
 ---
 
@@ -55,7 +55,7 @@ Com o código pausado, você assume o comando através de controles de navegaç�
 * **Próxima Linha (Step Over):** Avança para a linha seguinte imediatamente.
 * **Entrar na Função (Step Into):** Permite mergulhar na execução interna de uma função específica.
 
-![Botões de controle de execução no Chrome DevTools](/assets/img/8.webp)
+![Botões de controle de execução no Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/8.webp)
 
 ---
 
@@ -67,6 +67,27 @@ A depuração visual elimina a necessidade de adivinhação. Veja como inspecion
 * **Painel Scope:** Exibe automaticamente todas as variáveis disponíveis no escopo atual da função.
 * **Painel Watch:** Permite que você adicione variáveis específicas para monitorar o comportamento delas durante toda a depuração.
 
-![Inspecionando variáveis com hover](/assets/img/9.webp)
-![Painel Scope no Chrome](/assets/img/10.webp)
-![Painel Watch no Chrome](/assets/img/11.webp)
+![Inspecionando variáveis com hover](/assets/img/debugging-no-chrome-guia-visual/9.webp)
+![Painel Scope no Chrome](/assets/img/debugging-no-chrome-guia-visual/10.webp)
+![Painel Watch no Chrome](/assets/img/debugging-no-chrome-guia-visual/11.webp)
+
+## 5. Rastreando a Origem: A Pilha de Chamadas (Call Stack)
+
+A depuração visual não estaria completa sem entender o caminho exato que o seu código percorreu até chegar ao ponto de erro.
+
+![Visualização do Painel Call Stack no Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/12.webp)
+
+* **Call Stack:** Este painel mostra a "pilha" de funções que foram executadas em ordem.
+* **Rastreamento Lógico:** Se o erro ocorre dentro de uma função, você pode clicar nas chamadas anteriores na pilha para ver qual foi o valor que deu origem ao problema.
+
+---
+
+## Conclusão
+
+Dominar as ferramentas de desenvolvedor do Chrome transforma a programação de um "palpite" em um processo científico. Ao utilizar o **Console** e a aba **Sources**, você ganha clareza sobre como suas funções interagem e onde exatamente a lógica se perde.
+
+![Resumo visual de depuração no navegador](/assets/img/debugging-no-chrome-guia-visual/13.webp)
+
+A depuração visual elimina a necessidade de adivinhar o que está errado. Com a prática de pausar a execução e inspecionar variáveis em tempo real, você se torna um desenvolvedor muito mais eficiente e confiante.
+
+
