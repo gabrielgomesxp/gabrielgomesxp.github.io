@@ -2,27 +2,41 @@ title: Gabriel Gomes XP
 description: >-
   Documentando minha jornada de aprendizado em tecnologia e programação.
 
-# 1. Ativa a versão moderna do tema
+# Usa a versão que suporta esses novos ícones
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
-# 2. Configura os links (não mude o recuo das linhas com "-")
+# Configurações específicas do Minima v3
 minima:
+  skin: auto
+  # Links do Menu Superior (no v3 é nav_pages dentro de minima)
+  nav_pages:
+    - index.md
+    - blog.md
+
+  # Links de Redes Sociais com a estrutura correta do v3
   social_links:
-    - { platform: github, user_name: gabrielgomesxp }
-    - { platform: twitter, user_name: gabrielgomesxp }
-    - { platform: instagram, user_name: gabrielgomesxp }
-    - { platform: linkedin, user_name: gabrielgomesxp }
-    - { platform: facebook, user_name: gabrielgomesxp }
-    - { platform: youtube, user_name: gabrielgomesxp }
+    - title: GitHub
+      icon: github
+      url: "https://github.com/gabrielgomesxp"
+    - title: X (Twitter)
+      icon: x-twitter
+      url: "https://x.com/gabrielgomesxp"
+    - title: Instagram
+      icon: instagram
+      url: "https://instagram.com/gabrielgomesxp"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/gabrielgomesxp"
+    - title: Facebook
+      icon: facebook
+      url: "https://facebook.com/gabrielgomesxp"
+    - title: YouTube
+      icon: youtube
+      url: "https://youtube.com/@gabrielgomesxp"
 
-# 3. Mantém seus links limpos
+# Mantém seus links sem a data
 permalink: /:title/
-
-# 4. Menu superior
-header_pages:
-  - index.md
-  - blog.md
