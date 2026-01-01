@@ -1,22 +1,15 @@
 title: Gabriel Gomes XP
 description: >-
   Documentando minha jornada de aprendizado em tecnologia e programação.
-  
-# Mudança importante: Usar a versão mais recente do tema
+
+# 1. Ativa a versão moderna do tema
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
-permalink: /:title/
-
-# Lista de páginas no menu superior
-header_pages:
-  - index.md
-  - blog.md
-
-# Configuração das Redes Sociais (Agora vai funcionar!)
+# 2. Configura os links (não mude o recuo das linhas com "-")
 minima:
   social_links:
     - { platform: github, user_name: gabrielgomesxp }
@@ -25,3 +18,11 @@ minima:
     - { platform: linkedin, user_name: gabrielgomesxp }
     - { platform: facebook, user_name: gabrielgomesxp }
     - { platform: youtube, user_name: gabrielgomesxp }
+
+# 3. Mantém seus links limpos
+permalink: /:title/
+
+# 4. Menu superior
+header_pages:
+  - index.md
+  - blog.md
