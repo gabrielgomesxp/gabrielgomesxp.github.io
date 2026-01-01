@@ -1,21 +1,27 @@
-# Informações Básicas
 title: Gabriel Gomes XP
 description: >-
   Documentando minha jornada de aprendizado em tecnologia e programação.
-theme: minima
+  
+# Mudança importante: Usar a versão mais recente do tema
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
 permalink: /:title/
 
-# Configuração do Menu Superior
+# Lista de páginas no menu superior
 header_pages:
   - index.md
   - blog.md
 
-# Configuração das Redes Sociais no Rodapé
+# Configuração das Redes Sociais (Agora vai funcionar!)
 minima:
   social_links:
-    - { platform: youtube, user_name: gabrielgomesxp }
+    - { platform: github, user_name: gabrielgomesxp }
     - { platform: twitter, user_name: gabrielgomesxp }
     - { platform: instagram, user_name: gabrielgomesxp }
     - { platform: linkedin, user_name: gabrielgomesxp }
     - { platform: facebook, user_name: gabrielgomesxp }
-    - { platform: github, user_name: gabrielgomesxp }
+    - { platform: youtube, user_name: gabrielgomesxp }
