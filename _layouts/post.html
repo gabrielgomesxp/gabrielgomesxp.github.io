@@ -41,7 +41,6 @@ layout: base
   /* CONFIGURAÇÃO DA GRADE (GRID) */
   .post-grid {
     display: grid;
-    /* main: max 728px | wide: max 950px (728 + 111 + 111) */
     grid-template-columns: 
       [full-start] minmax(20px, 1fr) 
       [wide-start] minmax(0, 111px) 
@@ -50,33 +49,42 @@ layout: base
       minmax(20px, 1fr) [full-end];
   }
 
-  /* Tudo o que é texto vai para a coluna central (main) */
+  /* Texto padrão na coluna main */
   .post-grid > *, .grid-main {
     grid-column: main;
   }
 
-  /* Imagens podem ocupar a coluna larga (wide) de até 950px */
-  .post-content img, 
-  .post-content p > img,
-  .post-content .wide-content {
-    grid-column: wide;
+  /* Regra para o parágrafo que contém a imagem (identificado pelo JS) */
+  .post-content p.img-container {
+    grid-column: wide-start / wide-end;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+
+  /* Estilização da imagem dentro do parágrafo */
+  .post-content p.img-container img {
     max-width: 950px;
+    width: 100%;
     height: auto;
-    justify-self: center;
-    margin: 30px 0;
     border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  }
-
-  /* Ajustes para garantir que títulos e listas não quebrem o grid */
-  .post-content h2, .post-content h3, .post-content p, .post-content ul, .post-content ol {
-    grid-column: main;
-  }
-
-  /* Remove a margem padrão do wrapper do Minima para o grid ocupar a tela toda */
-  .post .post-header, .post .post-content {
-    max-width: none;
-    padding: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 </style>
+
+<script>
+  // JavaScript para identificar <p> com <img> e aplicar a classe de layout
+  document.addEventListener("DOMContentLoaded", function() {
+    // Seleciona todos os parágrafos dentro do conteúdo do post
+    const paragraphs = document.querySelectorAll('.post-content p');
+    
+    paragraphs.forEach(p => {
+      // Se o parágrafo contiver uma imagem, adicionamos a classe 'img-container'
+      if (p.querySelector('img')) {
+        p.classList.add('img-container');
+      }
+    });
+  });
+</script>
