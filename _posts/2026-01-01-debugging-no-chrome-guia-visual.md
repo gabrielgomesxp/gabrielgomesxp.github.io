@@ -42,7 +42,7 @@ Quando apenas imprimir mensagens não resolve o problema, você deve utilizar a 
 * **Inserindo um Breakpoint:** Você pode interromper a execução do código clicando diretamente no número da linha, criando um ponto de parada.
 * **Execução Pausada:** Quando o navegador atinge essa linha, o código "congela", permitindo analisar o cenário exato da aplicação.
 
-![Como inserir um breakpoint](/assets/img/debugging-no-chrome-guia-visual/7.webp)
+![Como inserir um breakpoint](/assets/img/debugging-no-chrome-guia-visual/6.webp)
 ![Visualização de execução pausada no Chrome](/assets/img/debugging-no-chrome-guia-visual/7.webp)
 
 ---
