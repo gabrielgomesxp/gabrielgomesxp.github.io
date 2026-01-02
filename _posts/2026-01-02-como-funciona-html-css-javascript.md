@@ -97,3 +97,9 @@ Manter essas camadas separadas (o código CSS no `<style>` ou em arquivos `.css`
 Agora que você entende a anatomia, que tal tentar criar seu primeiro componente? Comece definindo a **estrutura** (HTML), depois dê **estilo** (CSS) e finalize com a **interatividade** (JS)!
 
 ---
+
+## 🎥 Aula Prática: O que é JavaScript?
+
+[![Assista ao vídeo: Começando a Programar do Zero](https://img.youtube.com/vi/P8djqdrqGt4/0.jpg)](https://www.youtube.com/watch?v=P8djqdrqGt4)
+
+
