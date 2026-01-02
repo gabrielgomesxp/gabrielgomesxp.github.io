@@ -3,74 +3,80 @@ layout: base
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <div class="post-meta">
-      {%- assign date_format = site.minima.date_format | default: "%d/%m/%Y" -%}
-      {% assign pdate = page.date | date_to_xmlschema %}
-      {%- if page.modified_date %}<span class="meta-label">Published:</span>{% endif %}
-      <time class="dt-published" datetime="{{ pdate }}" itemprop="datePublished">
-        {{ pdate | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        <span class="bullet-divider">•</span>
-        <span class="meta-label">Updated:</span>
-        {%- assign mdate = page.modified_date | date_to_xmlschema %}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
+  <header class="post-header post-grid">
+    <div class="grid-main">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <div class="post-meta">
+        {%- assign date_format = site.minima.date_format | default: "%d/%m/%Y" -%}
+        {% assign pdate = page.date | date_to_xmlschema %}
+        <time class="dt-published" datetime="{{ pdate }}" itemprop="datePublished">
+          {{ pdate | date: date_format }}
         </time>
-      {%- endif -%}
-      {%- if page.author %}
-      <div class="{% unless page.modified_date %}force-inline {% endunless %}post-authors">
-        {%- for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-          {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      </div>
-      {%- endif %}
-
-      {%- if page.description -%}
-        <div class="post-description" style="margin-top: 15px; font-size: 1.2em; color: #555; font-style: italic; line-height: 1.4; border-left: 3px solid #eee; padding-left: 15px;">
-          {{ page.description }}
+        {%- if page.author %}
+        <div class="post-authors" style="display: inline-block; margin-left: 5px;">
+          {%- for author in page.author %}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+          {% endfor %}
         </div>
-      {%- endif -%}
+        {%- endif %}
+
+        {%- if page.description -%}
+          <div class="post-description" style="margin-top: 15px; font-size: 1.15em; color: #555; font-style: italic; border-left: 3px solid #eee; padding-left: 15px;">
+            {{ page.description }}
+          </div>
+        {%- endif -%}
+      </div>
     </div>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content e-content post-grid" itemprop="articleBody">
     {{ content }}
   </div>
-
-  {% if jekyll.environment == 'production' -%}
-    {% if page.comments == false -%}
-    <div class="comments-disabled-message">
-      Comments have been disabled for this post.
-    </div>
-    {% else -%}
-      {%- include comments.html -%}
-    {% endif -%}
-  {% endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
 <style>
-  /* Base para dispositivos móveis: imagem ocupa 100% da largura da tela */
-  .post-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 30px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve para destacar imagens */
+  /* CONFIGURAÇÃO DA GRADE (GRID) */
+  .post-grid {
+    display: grid;
+    /* main: max 728px | wide: max 950px (728 + 111 + 111) */
+    grid-template-columns: 
+      [full-start] minmax(20px, 1fr) 
+      [wide-start] minmax(0, 111px) 
+      [main-start] min(728px, calc(100% - 40px)) [main-end] 
+      minmax(0, 111px) [wide-end] 
+      minmax(20px, 1fr) [full-end];
   }
 
-  /* Regra para telas maiores que 800px: imagem limita-se a 950px */
-  @media screen and (min-width: 800px) {
-    .post-content img {
-      max-width: 950px;
-      width: 100%; /* Garante que ela cresça até o limite de 950px */
-    }
+  /* Tudo o que é texto vai para a coluna central (main) */
+  .post-grid > *, .grid-main {
+    grid-column: main;
+  }
+
+  /* Imagens podem ocupar a coluna larga (wide) de até 950px */
+  .post-content img, 
+  .post-content p > img,
+  .post-content .wide-content {
+    grid-column: wide;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    justify-self: center;
+    margin: 30px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  /* Ajustes para garantir que títulos e listas não quebrem o grid */
+  .post-content h2, .post-content h3, .post-content p, .post-content ul, .post-content ol {
+    grid-column: main;
+  }
+
+  /* Remove a margem padrão do wrapper do Minima para o grid ocupar a tela toda */
+  .post .post-header, .post .post-content {
+    max-width: none;
+    padding: 0;
   }
 </style>
