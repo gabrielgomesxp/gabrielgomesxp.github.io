@@ -1,0 +1,66 @@
+---
+layout: base
+---
+<article class="post page-grid">
+
+  <header class="post-header grid-main">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content grid-main" id="page-content">
+    {{ content }}
+  </div>
+
+</article>
+
+<style>
+  /* CONFIGURAÇÃO DA GRADE (GRID) PARA PÁGINAS */
+  .page-grid {
+    display: grid;
+    /* main: max 728px | wide: max 950px (728 + 111 + 111) */
+    grid-template-columns: 
+      [full-start] minmax(20px, 1fr) 
+      [wide-start] minmax(0, 111px) 
+      [main-start] min(728px, calc(100% - 40px)) [main-end] 
+      minmax(0, 111px) [wide-end] 
+      minmax(20px, 1fr) [full-end];
+  }
+
+  /* Garante que o conteúdo textual e o título fiquem na coluna central */
+  .grid-main, .post-header {
+    grid-column: main;
+  }
+
+  /* Aplicação do layout largo para parágrafos com imagens (via JS) */
+  #page-content p.img-container {
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    max-width: 950px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+
+  /* Estilização das imagens para não estourarem o layout */
+  #page-content p.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+</style>
+
+<script>
+  // JavaScript para identificar parágrafos com imagens em páginas estáticas
+  document.addEventListener("DOMContentLoaded", function() {
+    const paragraphs = document.querySelectorAll('#page-content p');
+    
+    paragraphs.forEach(p => {
+      if (p.querySelector('img')) {
+        p.classList.add('img-container');
+      }
+    });
+  });
+</script>
