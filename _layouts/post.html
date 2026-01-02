@@ -13,12 +13,7 @@ layout: base
           {{ pdate | date: date_format }}
         </time>
         {%- if page.author %}
-        <div class="post-authors" style="display: inline-block; margin-left: 5px;">
-          {%- for author in page.author %}
-            • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-          {% endfor %}
-        </div>
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
         {%- endif %}
 
         {%- if page.description -%}
@@ -34,13 +29,13 @@ layout: base
     {{ content }}
   </div>
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
 <style>
-  /* CONFIGURAÇÃO DA GRADE (GRID) */
+  /* CONFIGURAÇÃO DA GRADE (GRID) NO POST-CONTENT */
   .post-grid {
     display: grid;
+    /* Criamos as colunas nomeadas para facilitar o controle */
     grid-template-columns: 
       [full-start] minmax(20px, 1fr) 
       [wide-start] minmax(0, 111px) 
@@ -49,24 +44,25 @@ layout: base
       minmax(20px, 1fr) [full-end];
   }
 
-  /* Texto padrão na coluna main */
+  /* Tudo o que for texto/conteúdo comum vai para a coluna central (728px) */
   .post-grid > *, .grid-main {
     grid-column: main;
   }
 
-  /* Regra para o parágrafo que contém a imagem (identificado pelo JS) */
+  /* Aplicação do ID/Classe via JS para imagens ocuparem o espaço WIDE (950px) */
   .post-content p.img-container {
     grid-column: wide-start / wide-end;
     width: 100%;
+    max-width: 950px; /* Limite que você pediu para telas grandes */
+    justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0px 0 20px 0;
   }
 
-  /* Estilização da imagem dentro do parágrafo */
+  /* Ajuste das imagens dentro do container para não estourarem */
   .post-content p.img-container img {
-    max-width: 950px;
     width: 100%;
     height: auto;
     border-radius: 0px;
@@ -74,15 +70,16 @@ layout: base
 </style>
 
 <script>
-  // JavaScript para identificar <p> com <img> e aplicar a classe de layout
+  // JavaScript para detectar parágrafos que contêm imagens
   document.addEventListener("DOMContentLoaded", function() {
-    // Seleciona todos os parágrafos dentro do conteúdo do post
+    // Seleciona todos os parágrafos do post
     const paragraphs = document.querySelectorAll('.post-content p');
     
     paragraphs.forEach(p => {
-      // Se o parágrafo contiver uma imagem, adicionamos a classe 'img-container'
+      // Se o parágrafo tiver uma tag <img> dentro, aplicamos a classe de grid largo
       if (p.querySelector('img')) {
         p.classList.add('img-container');
+        // Opcional: p.id = 'img'; // Se você quiser usar ID, mas classe é mais segura para múltiplos itens
       }
     });
   });
