@@ -1,0 +1,111 @@
+---
+layout: base
+---
+
+<div class="home home-grid">
+  {%- if page.title -%}
+    <h1 class="page-heading grid-main">{{ page.title }}</h1>
+  {%- endif -%}
+
+  <div class="grid-main">
+    {{ content }}
+  </div>
+
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+    <div class="grid-main">
+      {%- if page.list_title -%}
+        <h2 class="post-list-heading">{{ page.list_title }}</h2>
+      {%- endif -%}
+
+      <ul class="post-list">
+        {%- assign date_format = site.minima.date_format | default: "%d/%m/%Y" -%}
+        {%- for post in posts -%}
+        <li>
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if site.minima.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      {% if site.paginate %}
+        <div class="pager">
+          <ul class="pagination">
+          {%- if paginator.previous_page %}
+            <li>
+              <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}">
+                {{ paginator.previous_page }}
+              </a>
+            </li>
+          {%- else %}
+            <li><div class="pager-edge">•</div></li>
+          {%- endif %}
+            <li><div class="current-page">{{ paginator.page }}</div></li>
+          {%- if paginator.next_page %}
+            <li>
+              <a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}">
+                {{ paginator.next_page }}
+              </a>
+            </li>
+          {%- else %}
+            <li><div class="pager-edge">•</div></li>
+          {%- endif %}
+          </ul>
+        </div>
+      {%- endif %}
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  /* CONFIGURAÇÃO DA GRADE (GRID) PARA A HOME */
+  .home-grid {
+    display: grid;
+    /* Mantendo o padrão de 728px para leitura e 950px para expansão */
+    grid-template-columns: 
+      [full-start] minmax(20px, 1fr) 
+      [wide-start] minmax(0, 111px) 
+      [main-start] min(728px, calc(100% - 40px)) [main-end] 
+      minmax(0, 111px) [wide-end] 
+      minmax(20px, 1fr) [full-end];
+  }
+
+  /* Garante que o conteúdo textual fique na coluna central */
+  .grid-main, .page-heading {
+    grid-column: main;
+  }
+
+  /* Estilização da lista de posts */
+  .post-list {
+    margin-left: 0;
+    list-style: none;
+  }
+
+  .post-list > li {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+  /* Estilização da paginação */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    gap: 15px;
+  }
+</style>
