@@ -19,7 +19,7 @@ Encontrar erros no código pode ser frustrante para quem está começando, mas d
 
 O console funciona como o seu canal de comunicação primário e direto com o código enquanto ele é executado pelo navegador.
 
-![Interface do Console do Google Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/´2.webp)
+![Interface do Console do Google Chrome DevTools](/assets/img/debugging-no-chrome-guia-visual/2.webp)
 
 ### Como usar o `console.log()` de forma inteligente
 
