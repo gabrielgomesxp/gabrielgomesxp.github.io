@@ -6,8 +6,6 @@ permalink: /tipos-de-dados-javascript/
 description: "Aprenda os tipos de dados em JavaScript com este guia visual completo. Entenda variáveis, Number, String, Boolean, Objetos e muito mais!"
 ---
 
-# Tipos de Dados em JavaScript: O Guia Visual para Dominar Primitivos e Objetos
-
 ![Capa: Tipos de Dados em JavaScript com diversos símbolos de código](/assets/img/tipos-de-dados-javascript/1.webp)
 
 Você já sentiu que o seu código se comporta de forma estranha porque você não sabia exatamente que tipo de valor estava usando? Entender os **tipos de dados** é a base para escrever programas sólidos e sem erros.
