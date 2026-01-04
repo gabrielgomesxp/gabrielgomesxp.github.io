@@ -17,11 +17,11 @@ layout: base
   /* CONFIGURAÇÃO DA GRADE (GRID) PARA PÁGINAS */
   .page-grid {
     display: grid;
-    /* main: max 728px | wide: max 950px (728 + 111 + 111) */
+    /* main: max 800px | wide: max 950px (728 + 111 + 111) */
     grid-template-columns: 
       [full-start] minmax(20px, 1fr) 
       [wide-start] minmax(0, 111px) 
-      [main-start] min(728px, calc(100% - 40px)) [main-end] 
+      [main-start] min(800px, calc(100% - 40px)) [main-end] 
       minmax(0, 111px) [wide-end] 
       minmax(20px, 1fr) [full-end];
   }
