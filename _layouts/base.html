@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'pt-BR' }}">
 
   {%- include head.html -%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    .wrapper-page-content {max-width: 100%;}
+    /* VARIÁVEIS DE CORES */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --link-color: #2a7ae2;
+      --border-color: #eee;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #151515;
+      --text-color: #e5e5e5;
+      --link-color: #4096ff;
+      --border-color: #333;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      margin: 0;
+    }
+
+    .wrapper-page-content { max-width: 100%; }
+    
+    /* Botão de Tema */
+    #theme-toggle {
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      padding: 10px;
+      margin-left: 15px;
+    }
   </style>
+
   <body>
+    <script>
+      // Verifica o tema salvo antes de renderizar a página
+      const savedTheme = localStorage.getItem("theme") || "light";
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
 
     {%- include header.html -%}
 
@@ -17,9 +59,29 @@
     </main>
 
     {%- include footer.html -%}
-
     {%- include sub-footer.html -%}
 
-  </body>
+    <script>
+      const toggleBtn = document.getElementById("theme-toggle");
+      const icon = toggleBtn.querySelector("i");
 
+      // Atualiza o ícone no carregamento
+      if (document.documentElement.getAttribute("data-theme") === "dark") {
+        icon.classList.replace("fa-moon", "fa-sun");
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+          icon.classList.replace("fa-sun", "fa-moon");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+          icon.classList.replace("fa-moon", "fa-sun");
+        }
+      });
+    </script>
+  </body>
 </html>
