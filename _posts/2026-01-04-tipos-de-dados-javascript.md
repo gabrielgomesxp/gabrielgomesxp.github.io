@@ -78,26 +78,9 @@ Para situações avançadas, o JavaScript oferece:
 
 ---
 
-## 🎥 Aula Prática: Colocando a Mão no Código
-
-Para ver esses tipos funcionando na prática e entender como eles se relacionam com o HTML e o CSS que estudamos antes, assista a esta aula:
-
-[![Assista ao vídeo: Começando a Programar do Zero](https://img.youtube.com/vi/P8djqdrqGt4/0.jpg)](https://www.youtube.com/watch?v=P8djqdrqGt4)
-
----
-
-## 💡 Dica de Ouro: Identidade Visual com Fundo #eee
-
-No design de interfaces, a clareza é tudo. Para este post, seguimos a regra fundamental de manter o **background sempre em #eee**. 
-
-Essa tonalidade neutra garante que os blocos de código e as imagens técnicas (como o blueprint final abaixo) tenham o destaque necessário sem cansar a vista do leitor.
+Dominar os tipos de dados é o que permite que você manipule informações com precisão em seus programas. Do simples `true` de um Boolean até a complexidade de um `Object`, cada tipo tem seu papel na arquitetura da web.
 
 ![Blueprint Final: Resumo de todo o sistema de tipos do JavaScript](/assets/img/tipos-de-dados-javascript/9.webp)
 
----
-
-Dominar os tipos de dados é o que permite que você manipule informações com precisão em seus programas. Do simples `true` de um Boolean até a complexidade de um `Object`, cada tipo tem seu papel na arquitetura da web.
-
 **Qual desses tipos você achou mais interessante?** Comece a testar usando o `console.log()` no seu navegador hoje mesmo! 
 
----
