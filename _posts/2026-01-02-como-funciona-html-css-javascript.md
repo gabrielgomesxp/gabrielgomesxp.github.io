@@ -5,9 +5,9 @@ permalink: /anatomia-da-interacao-web-completa/
 description: "Entenda a fundo a estrutura, apresentação e comportamento de um site. Analisamos cada camada da anatomia web neste guia visual passo a passo."
 ---
 
-![Capa: HTML + CSS + JS - Anatomia de uma Interação Web](/assets/img/anatomia-da-interacao-web-completa/1.webp)
-
 Entender como um site funciona não é mágica; é arquitetura. A web moderna é construída sobre três pilares que trabalham em total harmonia para transformar linhas de código em experiências interativas. 
+
+![Capa: HTML + CSS + JS - Anatomia de uma Interação Web](/assets/img/anatomia-da-interacao-web-completa/1.webp)
 
 Neste guia, vamos dissecar o funcionamento interno de um componente web, desde o seu esqueleto até o seu comportamento dinâmico.
 
