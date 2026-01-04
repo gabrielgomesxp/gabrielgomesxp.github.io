@@ -15,7 +15,7 @@ plugins:
 # Configurações específicas do Minima v3
 minima:
   skin: auto
-  # Links do Menu Superior (no v3 é nav_pages dentro de minima)
+  show_excerpts: true 
   nav_pages:
     - index.md
     - blog.md
