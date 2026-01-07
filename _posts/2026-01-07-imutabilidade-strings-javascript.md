@@ -5,11 +5,9 @@ permalink: /imutabilidade-strings-javascript/
 description: "Entenda a fundo como o JavaScript gere a memória e a imutabilidade das strings. Análise completa com debugger e ponteiros."
 ---
 
-# Imutabilidade de Strings no JavaScript: O Guia Visual de 12 Passos
+Muitos programadores iniciantes confundem **reatribuição** com **mutação**. No JavaScript, as strings são imutáveis: uma vez criadas na memória, elas não mudam. O que muda é para onde a sua variável aponta.
 
 ![Capa: Desvendando a Imutabilidade de Strings via Debugger](/assets/img/imutabilidade-strings-javascript/1.webp)
-
-Muitos programadores iniciantes confundem **reatribuição** com **mutação**. No JavaScript, as strings são imutáveis: uma vez criadas na memória, elas não mudam. O que muda é para onde a sua variável aponta.
 
 Neste guia longo e detalhado, vamos seguir os 12 slides técnicos para entender o que acontece na Memória Heap durante a execução do código.
 
