@@ -9,7 +9,7 @@ Muitos programadores iniciantes confundem **reatribuição** com **mutação**. 
 
 ![Capa: Desvendando a Imutabilidade de Strings via Debugger](/assets/img/imutabilidade-strings-javascript/1.webp)
 
-Neste guia longo e detalhado, vamos seguir os 12 slides técnicos para entender o que acontece na Memória Heap durante a execução do código.
+Neste guia longo e detalhado, vamos seguir os 12 passos técnicos para entender o que acontece na Memória Heap durante a execução do código.
 
 ## 1. Preparando o Ambiente de Teste
 Para esta análise, utilizaremos um script simples onde a variável `developer` recebe o nome "Jessica" e depois é alterada para "Quincy".
