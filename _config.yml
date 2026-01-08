@@ -18,7 +18,6 @@ minima:
   show_excerpts: true 
   nav_pages:
     - index.md
-    - blog.md
 
   # Links de Redes Sociais com a estrutura correta do v3
   social_links:
