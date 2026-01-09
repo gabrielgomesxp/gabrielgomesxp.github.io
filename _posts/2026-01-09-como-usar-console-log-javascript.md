@@ -77,7 +77,6 @@ Confira este guia rápido para consulta sempre que precisar exibir informações
 
 ---
 
-
 O `console.log()` é o primeiro passo para dominar a arte de entender como o seu programa se comporta durante a execução. Ele facilita a identificação de erros e torna o aprendizado muito mais visual.
 
 **Qual foi a última coisa que você "logou" no seu console hoje?** Experimente abrir o console do seu navegador agora (F12) e digite o seu primeiro comando!
