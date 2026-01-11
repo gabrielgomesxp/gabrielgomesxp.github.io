@@ -74,7 +74,7 @@ A regra de ouro do *Clean Code* é: **Não use comentários para explicar códig
 
 ---
 
-## Conclusão: A Regra de Ouro
+## A Regra de Ouro
 
 O segredo de um código profissional é ser explícito. Se o seu código é claro, ele não precisa de muletas.
 
